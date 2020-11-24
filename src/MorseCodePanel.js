@@ -52,7 +52,7 @@ class MorseCodePanel extends Component {
     } 
 
     replaceSpacesWithNBSP(text) {
-        return text.replace(/   /g, "&nbsp;&nbsp;&nbsp;");
+        return text.replace(/\s\s\s/g, "&nbsp;&nbsp;&nbsp;");
     }
 }
 
