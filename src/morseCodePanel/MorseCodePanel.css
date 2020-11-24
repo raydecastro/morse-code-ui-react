@@ -3,7 +3,7 @@
 }
 
 .morseCodePanel input {
-    margin: 40px 20px;
+    margin: 40px 20px 5px 20px;
     min-width: 600px;
     display: inline-block;
 }

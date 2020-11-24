@@ -30,6 +30,8 @@ class MorseCodePanel extends Component {
                     <button className="clear btn btn-secondary" onClick={this.clear} >
                         clear
                     </button>
+
+                    <small id="inputMessageHelpID" class="form-text text-muted">International Morse Code Generator</small>
                 </div>
                     
                 <div className="outputMorseCode">
