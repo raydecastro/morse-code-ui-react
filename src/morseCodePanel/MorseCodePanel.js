@@ -35,9 +35,7 @@ class MorseCodePanel extends Component {
                         {this.renderMorseCodeCharacters()}
                     </div>
 
-                    <div className="outputMorseCode"
-                       dangerouslySetInnerHTML={{__html: this.state.outputMorseCode}} >
-                    </div>
+                    <textarea className="outputMorseCode" value={this.state.outputMorseCode} readOnly={true} />
             </div>
         )
     }
@@ -46,14 +44,10 @@ class MorseCodePanel extends Component {
         this.setState({ 
             inputMessage: event.target.value 
         });
-        console.log('msg: ' + event.target.value);
-        console.log('inputMessage: ' + this.state.inputMessage);
     }
 
     generateMorseCode() {
         let mc = this.mcg.generate(this.state.inputMessage);
-
-        mc = this.replaceSpacesWithNBSP(mc);
 
         this.setState({
             outputMorseCode: mc
@@ -67,16 +61,9 @@ class MorseCodePanel extends Component {
         });
     }
 
-    replaceSpacesWithNBSP(text) {
-        let outputText = text.replace(/\s\s\s\s\s\s\s/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
-        return outputText.replace(/\s\s\s/g, "&nbsp;&nbsp;&nbsp;");
-    }
-
     renderMorseCodeCharacters() {
         return this.state.inputMessage.split("").map((letter, index, list) => {
-            console.log('letter: ' + letter);
             let code = this.mcg.generate(letter);
-            console.log('code: [' + code + ']');
             return <MorseCodeCharacter key={letter+index} letter={letter} morseCode={code} />
             });
     }
