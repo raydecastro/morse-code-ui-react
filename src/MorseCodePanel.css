@@ -12,6 +12,14 @@
     font-family: monospace;
 }
 
-.morseCodePanel button {
-    margin: 20px;
+.morseCodeCharacter {
+    display: inline-block;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.morseCodeCharacter .code, .morseCodeCharacter .letter {
+    display: block;
+    font-family: monospace;
+    text-align: left;
 }

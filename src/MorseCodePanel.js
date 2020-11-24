@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import MorseCodeCharacter from "./MorseCodeCharacter";
 import MorseCodeGenerator from 'morse-code/source/morsecodegenerator';
 import "./MorseCodePanel.css";
 
@@ -14,6 +15,7 @@ class MorseCodePanel extends Component {
 
         this.generateMorseCode = this.generateMorseCode.bind(this);
         this.handleInputMessageChange = this.handleInputMessageChange.bind(this);
+        this.renderMorseCodeCharacters = this.renderMorseCodeCharacters.bind(this);
     }
 
     render() {
@@ -21,12 +23,17 @@ class MorseCodePanel extends Component {
             <div className="morseCodePanel">
                     <input className="inputMessage" type="text" placeholder="enter message"
                            value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
-                    <p className="outputMorseCode"
-                       dangerouslySetInnerHTML={{__html: this.state.outputMorseCode}} >
-                    </p>
                     <button onClick={this.generateMorseCode}>
                         generate morse code
                     </button>
+                    
+                    <div className="morseyOutputz">
+                        {this.renderMorseCodeCharacters()}
+                    </div>
+
+                    <p className="outputMorseCode"
+                       dangerouslySetInnerHTML={{__html: this.state.outputMorseCode}} >
+                    </p>
             </div>
         )
     }
@@ -51,6 +58,15 @@ class MorseCodePanel extends Component {
 
     replaceSpacesWithNBSP(text) {
         return text.replace(/\s\s\s/g, "&nbsp;&nbsp;&nbsp;");
+    }
+
+    renderMorseCodeCharacters() {
+        return this.state.inputMessage.split("").map((letter, index, list) => {
+            console.log('letter: ' + letter);
+            let code = this.mcg.generate(letter);
+            console.log('code: [' + code + ']');
+            return <MorseCodeCharacter key={letter+index} letter={letter} morseCode={code} />
+            });
     }
 }
 
