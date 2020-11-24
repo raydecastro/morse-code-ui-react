@@ -44,8 +44,6 @@ class MorseCodePanel extends Component {
 
         mc = this.replaceSpacesWithNBSP(mc);
 
-        console.log('mc: ' + mc);
-
         this.setState({
             outputMorseCode: mc
         });
