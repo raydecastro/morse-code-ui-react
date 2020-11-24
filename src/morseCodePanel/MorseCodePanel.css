@@ -1,3 +1,6 @@
+.morseCodePanel {
+    margin: 0 20px;
+}
 
 .morseCodePanel input {
     margin: 40px 20px;
@@ -7,6 +10,7 @@
 
 .morseCodePanel .outputMorseCode {
     font-family: monospace;
+    text-align: left;
 }
 
 .morseCodeCharacter {

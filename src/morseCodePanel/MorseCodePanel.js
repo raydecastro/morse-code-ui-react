@@ -16,6 +16,7 @@ class MorseCodePanel extends Component {
         this.generateMorseCode = this.generateMorseCode.bind(this);
         this.handleInputMessageChange = this.handleInputMessageChange.bind(this);
         this.renderMorseCodeCharacters = this.renderMorseCodeCharacters.bind(this);
+        this.clear = this.clear.bind(this);
     }
 
     render() {
@@ -23,11 +24,14 @@ class MorseCodePanel extends Component {
             <div className="morseCodePanel">
                     <input className="inputMessage" type="text" placeholder="enter message"
                            value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
-                    <button onClick={this.generateMorseCode}>
+                    <button onClick={this.generateMorseCode} >
                         generate morse code
                     </button>
+                    <button onClick={this.clear} >
+                        clear
+                    </button>
                     
-                    <div className="morseyOutputz">
+                    <div className="outputMorseCode">
                         {this.renderMorseCodeCharacters()}
                     </div>
 
@@ -54,10 +58,18 @@ class MorseCodePanel extends Component {
         this.setState({
             outputMorseCode: mc
         });
-    } 
+    }
+
+    clear() {
+        this.setState({
+            inputMessage: "",
+            outputMorseCode: ""
+        });
+    }
 
     replaceSpacesWithNBSP(text) {
-        return text.replace(/\s\s\s/g, "&nbsp;&nbsp;&nbsp;");
+        let outputText = text.replace(/\s\s\s\s\s\s\s/g, "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;");
+        return outputText.replace(/\s\s\s/g, "&nbsp;&nbsp;&nbsp;");
     }
 
     renderMorseCodeCharacters() {
