@@ -1,0 +1,17 @@
+.morseCodePanel {
+    margin: 50px 50px;
+}
+
+.morseCodePanel input {
+    margin: 20px 20px;
+    min-width: 300px;
+    display: inline-block;
+}
+
+.morseCodePanel .outputMorseCode {
+    font-family: monospace;
+}
+
+.morseCodePanel button {
+    margin: 20px;
+}

@@ -1,20 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
 
-import MorseCodeGenerator from 'morse-code/source/morsecodegenerator';
+import MorseCodePanel from "./MorseCodePanel"
 
 function App() {
-
-  let mcg = new MorseCodeGenerator();
-  let code = mcg.generate("love");
-
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <code>{code}</code>
-        </p>
+  
+        <MorseCodePanel />
+
         <a
           className="App-link"
           href="https://github.com/raydecastro/morse-code-ui-react"
