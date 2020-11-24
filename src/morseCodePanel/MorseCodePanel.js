@@ -24,9 +24,7 @@ class MorseCodePanel extends Component {
             <div className="morseCodePanel">
                     <input className="inputMessage" type="text" placeholder="enter message"
                            value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
-                    <button onClick={this.generateMorseCode} >
-                        generate morse code
-                    </button>
+                           
                     <button onClick={this.clear} >
                         clear
                     </button>
@@ -43,6 +41,8 @@ class MorseCodePanel extends Component {
     handleInputMessageChange(event) {
         this.setState({ 
             inputMessage: event.target.value 
+        }, () => {
+            this.generateMorseCode();
         });
     }
 
