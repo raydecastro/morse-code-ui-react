@@ -22,17 +22,18 @@ class MorseCodePanel extends Component {
     render() {
         return (
             <div className="morseCodePanel">
+                <form>
+                    <div className="form-group">
+                        <input className="inputMessage" type="text" placeholder="enter message"
+                            value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
+                            
+                        <button className="clear btn btn-secondary" onClick={this.clear} >
+                            clear
+                        </button>
 
-                <div className="form-group">
-                    <input className="inputMessage" type="text" placeholder="enter message"
-                           value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
-                           
-                    <button className="clear btn btn-secondary" onClick={this.clear} >
-                        clear
-                    </button>
-
-                    <small id="inputMessageHelpID" class="form-text text-muted">International Morse Code Generator</small>
-                </div>
+                        <small id="inputMessageHelpID" class="form-text text-muted">International Morse Code Generator</small>
+                    </div>
+                </form>
                     
                 <div className="outputMorseCode">
                     {this.renderMorseCodeCharacters()}
