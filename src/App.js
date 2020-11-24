@@ -1,7 +1,7 @@
-import morsecodelogo from './morse_code.jpg';
+import morsecodelogo from './morseCodePanel/morse_code.jpg';
 import './App.css';
 
-import MorseCodePanel from "./MorseCodePanel"
+import MorseCodePanel from "./morseCodePanel/MorseCodePanel"
 
 function App() {
   return (
