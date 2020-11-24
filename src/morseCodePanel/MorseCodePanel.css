@@ -4,8 +4,12 @@
 
 .morseCodePanel input {
     margin: 40px 20px;
-    min-width: 300px;
+    min-width: 600px;
     display: inline-block;
+}
+
+.morseCodePanel .clear {
+    margin-top: -6px;
 }
 
 .morseCodePanel .outputMorseCode {

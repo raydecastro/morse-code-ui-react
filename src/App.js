@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={morsecodelogo} className="App-logo" alt="logo" />
+        <img src={morsecodelogo} className="App-logo rounded" alt="logo" />
       </header>
       <MorseCodePanel />
     </div>

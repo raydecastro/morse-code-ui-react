@@ -22,18 +22,21 @@ class MorseCodePanel extends Component {
     render() {
         return (
             <div className="morseCodePanel">
+
+                <div className="form-group">
                     <input className="inputMessage" type="text" placeholder="enter message"
                            value={this.state.inputMessage} onChange={this.handleInputMessageChange} />
                            
-                    <button onClick={this.clear} >
+                    <button className="clear btn btn-secondary" onClick={this.clear} >
                         clear
                     </button>
+                </div>
                     
-                    <div className="outputMorseCode">
-                        {this.renderMorseCodeCharacters()}
-                    </div>
+                <div className="outputMorseCode">
+                    {this.renderMorseCodeCharacters()}
+                </div>
 
-                    <textarea className="outputMorseCode" value={this.state.outputMorseCode} readOnly={true} />
+                <textarea className="outputMorseCode" value={this.state.outputMorseCode} readOnly={true} />
             </div>
         )
     }
