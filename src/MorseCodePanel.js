@@ -31,9 +31,9 @@ class MorseCodePanel extends Component {
                         {this.renderMorseCodeCharacters()}
                     </div>
 
-                    <p className="outputMorseCode"
+                    <div className="outputMorseCode"
                        dangerouslySetInnerHTML={{__html: this.state.outputMorseCode}} >
-                    </p>
+                    </div>
             </div>
         )
     }

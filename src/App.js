@@ -8,8 +8,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={morsecodelogo} className="App-logo" alt="logo" />
-        <MorseCodePanel />
       </header>
+      <MorseCodePanel />
     </div>
   );
 }
