@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import MorseCodeCharacter from "./MorseCodeCharacter";
-import MorseCodeGenerator from 'morse-code/source/morsecodegenerator';
+import MorseCodeGenerator from 'morse-code-core/source/morsecodegenerator';
 import "./MorseCodePanel.css";
 
 class MorseCodePanel extends Component {
